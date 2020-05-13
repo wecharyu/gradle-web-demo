@@ -1,0 +1,29 @@
+
+plugins {
+    id 'java'
+    id 'war'
+    id 'org.gretty' version '3.0.3'
+}
+
+// Configure repositories to get dependencies.
+repositories {
+    // maven2 repository (http://reopl.maven.org/)
+    mavenCentral()
+
+    jcenter()
+}
+
+// Configure dependencies used by project
+dependencies {
+    implementation 'javax.servlet:javax.servlet-api:3.1.0'
+    implementation 'junit:junit:4.12'
+}
+
+// gretty plugin configuration
+gretty {
+    httpPort = 8080
+    contextPath = '/'
+
+    debugPort = 5006    // default is 5005
+    debugSuspend = true // default is true
+}
